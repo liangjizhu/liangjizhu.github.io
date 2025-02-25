@@ -2,7 +2,7 @@
 const portfolio = {
     name: "Liang Ji Zhu",
     title: "Computer Science Student",
-    profilePhoto: "img_0521.jpg", // Ensure this matches your actual image file name/path
+    profilePhoto: "IMG_0521.jpg", // Ensure this matches your actual image file name/path
     about:
       "Motivated third-year Computer Science student with a strong foundation in software development, data structures, and cybersecurity. Passionate about solving complex problems through efficient algorithms and secure software practices. Seeking opportunities to apply my skills in a dynamic and innovative environment.",
     education: [
