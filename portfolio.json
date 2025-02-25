@@ -1,0 +1,52 @@
+{
+    "name": "Liang Ji Zhu",
+    "title": "Estudiante de Ingeniería Informática",
+    "about": "Motivado estudiante de tercer año con una sólida base en desarrollo de software, estructuras de datos y ciberseguridad. Apasionado por resolver problemas complejos mediante algoritmos eficientes y prácticas seguras de desarrollo.",
+    "education": [
+      {
+        "degree": "Grado en Ingeniería Informática y de Computadores",
+        "institution": "Universidad Carlos III de Madrid",
+        "year": "2022"
+      },
+      {
+        "degree": "Bachillerato en Ciencia y Tecnología",
+        "institution": "Colegio Villa de Móstoles",
+        "grade": "9.60",
+        "year": "2020"
+      }
+    ],
+    "experience": [
+      {
+        "role": "Shop Assistant",
+        "company": "Alimentación Bazar",
+        "location": "Madrid, Spain",
+        "duration": "Marzo 2021 - Agosto 2025"
+      },
+      {
+        "role": "Warehouse Organizer",
+        "company": "Shein",
+        "location": "Madrid, Spain",
+        "duration": "Junio 2022 - Agosto 2022"
+      }
+    ],
+    "skills": [
+      "Teamwork & Communication",
+      "Debugging & Troubleshooting",
+      "Pensamiento Algorítmico y Lógico",
+      "Documentación y Legibilidad de Código",
+      "Gestión de Proyectos",
+      "Bases de Datos",
+      "Programación en JavaScript, Python y Java",
+      "Desarrollo de Software y Web"
+    ],
+    "languages": [
+      "Chino (Nativo)",
+      "Español (Fluido)",
+      "Inglés (B2 Certificado)"
+    ],
+    "contact": {
+      "linkedin": "https://www.linkedin.com/in/liangjizhu/?locale=en_US",
+      "email": "liangjizhu29@gmail.com"
+    }
+  }
+  

@@ -1,43 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portafolio de Liang Ji Zhu</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+    header, section { background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 8px; }
+    h1, h2 { color: #333; }
+    ul { list-style: none; padding: 0; }
+    li { margin-bottom: 10px; }
+    a { color: #0073b1; text-decoration: none; }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Write a brief introduction about yourself here.</p>
-    </section>
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>Description of project 1.</p>
-        </div>
-        <div class="project">
-            <h3>Project 2</h3>
-            <p>Description of project 2.</p>
-        </div>
-    </section>
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>You can reach me at: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-    </section>
-    <footer>
-        <p>&copy; 2023 My Portfolio</p>
-    </footer>
+  <header>
+    <h1 id="name"></h1>
+    <p id="title"></p>
+  </header>
+
+  <section id="about">
+    <h2>Sobre Mí</h2>
+    <p id="about-text"></p>
+  </section>
+
+  <section id="education">
+    <h2>Educación</h2>
+    <ul id="education-list"></ul>
+  </section>
+
+  <section id="experience">
+    <h2>Experiencia Laboral</h2>
+    <ul id="experience-list"></ul>
+  </section>
+
+  <section id="skills">
+    <h2>Habilidades Técnicas</h2>
+    <ul id="skills-list"></ul>
+  </section>
+
+  <section id="languages">
+    <h2>Idiomas</h2>
+    <ul id="languages-list"></ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contacto</h2>
+    <p>LinkedIn: <a id="linkedin" href="" target="_blank">Perfil</a></p>
+    <p>Email: <a id="email" href=""></a></p>
+  </section>
+
+  <script>
+    // Datos del portafolio en formato JSON
+    const portfolio = {
+      "name": "Liang Ji Zhu",
+      "title": "Estudiante de Ingeniería Informática",
+      "about": "Motivado estudiante de tercer año con una sólida base en desarrollo de software, estructuras de datos y ciberseguridad. Apasionado por resolver problemas complejos mediante algoritmos eficientes y prácticas seguras de desarrollo.",
+      "education": [
+        {
+          "degree": "Grado en Ingeniería Informática y de Computadores",
+          "institution": "Universidad Carlos III de Madrid",
+          "year": "2022"
+        },
+        {
+          "degree": "Bachillerato en Ciencia y Tecnología",
+          "institution": "Colegio Villa de Móstoles",
+          "grade": "9.60",
+          "year": "2020"
+        }
+      ],
+      "experience": [
+        {
+          "role": "Shop Assistant",
+          "company": "Alimentación Bazar",
+          "location": "Madrid, Spain",
+          "duration": "Marzo 2021 - Agosto 2025"
+        },
+        {
+          "role": "Warehouse Organizer",
+          "company": "Shein",
+          "location": "Madrid, Spain",
+          "duration": "Junio 2022 - Agosto 2022"
+        }
+      ],
+      "skills": [
+        "Teamwork & Communication",
+        "Debugging & Troubleshooting",
+        "Pensamiento Algorítmico y Lógico",
+        "Documentación y Legibilidad de Código",
+        "Gestión de Proyectos",
+        "Bases de Datos",
+        "Programación en JavaScript, Python y Java",
+        "Desarrollo de Software y Web"
+      ],
+      "languages": [
+        "Chino (Nativo)",
+        "Español (Fluido)",
+        "Inglés (B2 Certificado)"
+      ],
+      "contact": {
+        "linkedin": "https://www.linkedin.com/in/liangjizhu/?locale=en_US",
+        "email": "liangjizhu29@gmail.com"
+      }
+    };
+
+    // Función para renderizar el portafolio en la página
+    function renderPortfolio(data) {
+      document.getElementById('name').textContent = data.name;
+      document.getElementById('title').textContent = data.title;
+      document.getElementById('about-text').textContent = data.about;
+
+      // Educación
+      const educationList = document.getElementById('education-list');
+      data.education.forEach(edu => {
+        const li = document.createElement('li');
+        li.textContent = `${edu.degree} - ${edu.institution} (${edu.year}) ${edu.grade ? '- Nota: ' + edu.grade : ''}`;
+        educationList.appendChild(li);
+      });
+
+      // Experiencia
+      const experienceList = document.getElementById('experience-list');
+      data.experience.forEach(exp => {
+        const li = document.createElement('li');
+        li.textContent = `${exp.role} en ${exp.company}, ${exp.location} (${exp.duration})`;
+        experienceList.appendChild(li);
+      });
+
+      // Habilidades
+      const skillsList = document.getElementById('skills-list');
+      data.skills.forEach(skill => {
+        const li = document.createElement('li');
+        li.textContent = skill;
+        skillsList.appendChild(li);
+      });
+
+      // Idiomas
+      const languagesList = document.getElementById('languages-list');
+      data.languages.forEach(lang => {
+        const li = document.createElement('li');
+        li.textContent = lang;
+        languagesList.appendChild(li);
+      });
+
+      // Contacto
+      document.getElementById('linkedin').href = data.contact.linkedin;
+      document.getElementById('email').href = `mailto:${data.contact.email}`;
+      document.getElementById('email').textContent = data.contact.email;
+    }
+
+    // Ejecutar función para renderizar el portafolio
+    renderPortfolio(portfolio);
+  </script>
 </body>
-</html></section>
+</html>
