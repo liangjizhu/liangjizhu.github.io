@@ -2,93 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Liang Ji Zhu - Portfolio</title>
-  <!-- Link to the CSS file -->
+  <title>Liang Ji Zhu - Interactive Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Falling Petals Container -->
-  <div class="petals-container">
-    <!-- Create multiple petals for the animation -->
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
-    <div class="petal"></div>
+  <div class="main-container">
+    <!-- Header with profile photo and basic info -->
+    <header class="header-section">
+      <div class="profile-container">
+        <img id="profile-photo" class="profile-photo" src="" alt="Profile Photo" />
+      </div>
+      <div class="header-info">
+        <h1 id="name"></h1>
+        <p id="title"></p>
+      </div>
+    </header>
+
+    <!-- Sections container with interactive cards -->
+    <div class="sections-container">
+      <!-- About Card -->
+      <section class="card" id="about-card">
+        <h2 class="card-header">About Me</h2>
+        <div class="card-content">
+          <p id="about"></p>
+        </div>
+      </section>
+
+      <!-- Education Card -->
+      <section class="card" id="education-card">
+        <h2 class="card-header">Education</h2>
+        <div class="card-content">
+          <ul id="education-list"></ul>
+        </div>
+      </section>
+
+      <!-- Experience Card -->
+      <section class="card" id="experience-card">
+        <h2 class="card-header">Work Experience</h2>
+        <div class="card-content">
+          <ul id="experience-list"></ul>
+        </div>
+      </section>
+
+      <!-- Skills Card -->
+      <section class="card" id="skills-card">
+        <h2 class="card-header">Skills</h2>
+        <div class="card-content">
+          <ul id="skills-list"></ul>
+        </div>
+      </section>
+
+      <!-- Languages Card -->
+      <section class="card" id="languages-card">
+        <h2 class="card-header">Languages</h2>
+        <div class="card-content">
+          <ul id="languages-list"></ul>
+        </div>
+      </section>
+
+      <!-- Interests Card -->
+      <section class="card" id="interests-card">
+        <h2 class="card-header">Interests</h2>
+        <div class="card-content">
+          <ul id="interests-list"></ul>
+        </div>
+      </section>
+
+      <!-- Contact Card -->
+      <section class="card" id="contact-card">
+        <h2 class="card-header">Contact</h2>
+        <div class="card-content">
+          <p><strong>LinkedIn:</strong> <a id="linkedin" href="#" target="_blank">Profile</a></p>
+          <p><strong>Email:</strong> <a id="email" href="#"></a></p>
+          <p><strong>Phone:</strong> <span id="phone"></span></p>
+          <p><strong>GitHub:</strong> <a id="github" href="#" target="_blank">GitHub</a></p>
+        </div>
+      </section>
+    </div>
   </div>
-
-  <header class="header-section fade-in-up clearfix">
-    <img id="profile-photo" class="profile-photo" src="" alt="Profile Photo" />
-    <h1 id="name"></h1>
-    <p id="title"></p>
-  </header>
-
-  <section id="about-section" class="fade-in-up">
-    <h2>About Me</h2>
-    <p id="about"></p>
-  </section>
-
-  <section id="education-section" class="fade-in-up">
-    <h2>Education</h2>
-    <ul id="education-list"></ul>
-  </section>
-
-  <section id="experience-section" class="fade-in-up">
-    <h2>Work Experience</h2>
-    <ul id="experience-list"></ul>
-  </section>
-
-  <section id="skills-section" class="fade-in-up">
-    <h2>Skills</h2>
-    <ul id="skills-list"></ul>
-  </section>
-
-  <section id="languages-section" class="fade-in-up">
-    <h2>Languages</h2>
-    <ul id="languages-list"></ul>
-  </section>
-
-  <section id="projects-section" class="fade-in-up">
-    <h2>Projects</h2>
-    <ul id="projects-list"></ul>
-  </section>
-
-  <section id="achievements-section" class="fade-in-up">
-    <h2>Achievements</h2>
-    <ul id="achievements-list"></ul>
-  </section>
-
-  <section id="interests-section" class="fade-in-up">
-    <h2>Interests</h2>
-    <ul id="interests-list"></ul>
-  </section>
-
-  <section id="contact-section" class="fade-in-up">
-    <h2>Contact</h2>
-    <p>
-      <strong>LinkedIn:</strong>
-      <a id="linkedin" href="#" target="_blank">Profile</a>
-    </p>
-    <p>
-      <strong>Email:</strong>
-      <a id="email" href="#"></a>
-    </p>
-    <p>
-      <strong>Phone:</strong>
-      <span id="phone"></span>
-    </p>
-    <p>
-      <strong>GitHub:</strong>
-      <a id="github" href="#" target="_blank">GitHub</a>
-    </p>
-  </section>
-
-  <!-- Link to your JS file -->
+  
   <script src="script.js"></script>
 </body>
 </html>

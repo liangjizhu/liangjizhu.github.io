@@ -2,7 +2,7 @@
 const portfolio = {
   name: "Liang Ji Zhu",
   title: "Computer Science Student",
-  profilePhoto: "IMG_0521.jpg", // Make sure this matches your image file name
+  profilePhoto: "IMG_0521.jpg", // Ensure this matches your image file name
   about:
     "Motivated third-year Computer Science student with a strong foundation in software development, data structures, and cybersecurity. Passionate about solving complex problems through efficient algorithms and secure software practices. Seeking opportunities to apply my skills in a dynamic and innovative environment.",
   education: [
@@ -48,34 +48,6 @@ const portfolio = {
     "English (B2 Certified)",
     "Spanish (Proficient)"
   ],
-  projects: [
-    {
-      name: "Data Analysis Tool",
-      description:
-        "Developed a Python application using Pandas and NumPy to process and analyze large datasets efficiently.",
-      technologies: ["Python", "Pandas", "NumPy"],
-      link: "https://github.com/yourusername/data-analysis-tool"
-    },
-    {
-      name: "Personal Website",
-      description:
-        "A personal website built with HTML, CSS, and JavaScript to showcase my portfolio and blog posts.",
-      technologies: ["HTML", "CSS", "JavaScript"],
-      link: "https://github.com/yourusername/personal-website"
-    }
-  ],
-  achievements: [
-    {
-      title: "Dean’s List",
-      description:
-        "Recognized for outstanding academic performance at the University of Carlos III de Madrid."
-    },
-    {
-      title: "Programming Contest Finalist",
-      description:
-        "Reached the final stage of an intercollegiate programming contest focusing on algorithms and data structures."
-    }
-  ],
   interests: [
     "Cybersecurity",
     "Machine Learning",
@@ -85,8 +57,8 @@ const portfolio = {
   contact: {
     linkedin: "https://www.linkedin.com/in/liangjizhu/?locale=en_US",
     email: "liangjizhu29@gmail.com",
-    phone: "+34 600 000 000",
-    github: "https://github.com/yourusername"
+    phone: "+34 643 858 157",
+    github: "https://github.com/liangjizhu"
   }
 };
 
@@ -136,27 +108,6 @@ function renderPortfolio(data) {
     languagesList.appendChild(li);
   });
 
-  // Projects
-  const projectsList = document.getElementById("projects-list");
-  data.projects.forEach((project) => {
-    const li = document.createElement("li");
-    li.innerHTML = `
-      <strong>${project.name}</strong> – 
-      ${project.description}<br />
-      <em>Technologies:</em> ${project.technologies.join(", ")}<br />
-      <a href="${project.link}" target="_blank">View on GitHub</a>
-    `;
-    projectsList.appendChild(li);
-  });
-
-  // Achievements
-  const achievementsList = document.getElementById("achievements-list");
-  data.achievements.forEach((ach) => {
-    const li = document.createElement("li");
-    li.innerHTML = `<strong>${ach.title}:</strong> ${ach.description}`;
-    achievementsList.appendChild(li);
-  });
-
   // Interests
   const interestsList = document.getElementById("interests-list");
   data.interests.forEach((interest) => {
@@ -173,5 +124,20 @@ function renderPortfolio(data) {
   document.getElementById("github").href = data.contact.github;
 }
 
-// Call the render function
-renderPortfolio(portfolio);
+// Set up accordion functionality for interactive toggling
+function setupAccordion() {
+  const headers = document.querySelectorAll('.card-header');
+  headers.forEach(header => {
+    header.addEventListener('click', () => {
+      header.classList.toggle('active');
+      const content = header.nextElementSibling;
+      content.classList.toggle('active');
+    });
+  });
+}
+
+// Initialize when DOM is loaded
+document.addEventListener("DOMContentLoaded", function() {
+  renderPortfolio(portfolio);
+  setupAccordion();
+});
