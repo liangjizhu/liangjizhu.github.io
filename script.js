@@ -2,7 +2,7 @@
 const portfolio = {
   name: "Liang Ji Zhu",
   title: "Computer Science Student",
-  profilePhoto: "IMG_0521.jpg", // Make sure this matches your image file name
+  profilePhoto: "img_0521.jpg", // Make sure this matches your image file name
   about:
     "Motivated third-year Computer Science student with a strong foundation in software development, data structures, and cybersecurity. Passionate about solving complex problems through efficient algorithms and secure software practices. Seeking opportunities to apply my skills in a dynamic and innovative environment.",
   education: [
@@ -47,6 +47,12 @@ const portfolio = {
     "Chinese (Native)",
     "English (B2 Certified)",
     "Spanish (Proficient)"
+  ],
+  projects: [
+    //
+  ],
+  achievements: [
+    //
   ],
   interests: [
     "Cybersecurity",
@@ -140,7 +146,6 @@ function renderPortfolio(data) {
   document.getElementById("linkedin").href = data.contact.linkedin;
   document.getElementById("email").href = `mailto:${data.contact.email}`;
   document.getElementById("email").textContent = data.contact.email;
-  document.getElementById("phone").textContent = data.contact.phone;
   document.getElementById("github").href = data.contact.github;
 }
 
