@@ -2,7 +2,7 @@
 const portfolio = {
   name: "Liang Ji Zhu",
   title: "Computer Science Student",
-  profilePhoto: "IMG_0521.jpg", // Ensure this matches your image file name
+  profilePhoto: "IMG_0521.jpg", // Make sure this matches your image file name
   about:
     "Motivated third-year Computer Science student with a strong foundation in software development, data structures, and cybersecurity. Passionate about solving complex problems through efficient algorithms and secure software practices. Seeking opportunities to apply my skills in a dynamic and innovative environment.",
   education: [
@@ -57,7 +57,6 @@ const portfolio = {
   contact: {
     linkedin: "https://www.linkedin.com/in/liangjizhu/?locale=en_US",
     email: "liangjizhu29@gmail.com",
-    phone: "+34 643 858 157",
     github: "https://github.com/liangjizhu"
   }
 };
@@ -108,6 +107,27 @@ function renderPortfolio(data) {
     languagesList.appendChild(li);
   });
 
+  // Projects
+  const projectsList = document.getElementById("projects-list");
+  data.projects.forEach((project) => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <strong>${project.name}</strong> – 
+      ${project.description}<br />
+      <em>Technologies:</em> ${project.technologies.join(", ")}<br />
+      <a href="${project.link}" target="_blank">View on GitHub</a>
+    `;
+    projectsList.appendChild(li);
+  });
+
+  // Achievements
+  const achievementsList = document.getElementById("achievements-list");
+  data.achievements.forEach((ach) => {
+    const li = document.createElement("li");
+    li.innerHTML = `<strong>${ach.title}:</strong> ${ach.description}`;
+    achievementsList.appendChild(li);
+  });
+
   // Interests
   const interestsList = document.getElementById("interests-list");
   data.interests.forEach((interest) => {
@@ -124,20 +144,5 @@ function renderPortfolio(data) {
   document.getElementById("github").href = data.contact.github;
 }
 
-// Set up accordion functionality for interactive toggling
-function setupAccordion() {
-  const headers = document.querySelectorAll('.card-header');
-  headers.forEach(header => {
-    header.addEventListener('click', () => {
-      header.classList.toggle('active');
-      const content = header.nextElementSibling;
-      content.classList.toggle('active');
-    });
-  });
-}
-
-// Initialize when DOM is loaded
-document.addEventListener("DOMContentLoaded", function() {
-  renderPortfolio(portfolio);
-  setupAccordion();
-});
+// Call the render function
+renderPortfolio(portfolio);

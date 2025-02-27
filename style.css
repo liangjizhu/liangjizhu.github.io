@@ -1,120 +1,214 @@
-/* Reset */
+/* 
+  Anime-style color scheme: pastel pinks, soft transitions, 
+  and a floating petals effect.
+*/
+
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body and Container */
+/* Body Styles */
 body {
-  font-family: Arial, sans-serif;
-  background: #f0f8ff;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(to bottom right, #ffd1dc 0%, #ffe4e1 100%);
   color: #333;
   padding: 20px;
-}
-.main-container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-/* Header styling */
-.header-section {
-  display: flex;
-  align-items: center;
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-.profile-container {
-  flex-shrink: 0;
-}
-.profile-photo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 4px solid #6a5acd;
-  transition: transform 0.3s ease;
-}
-.profile-photo:hover {
-  transform: scale(1.05);
-}
-.header-info {
-  margin-left: 20px;
-}
-.header-info h1 {
-  font-size: 2em;
-  margin-bottom: 10px;
-  color: #6a5acd;
-}
-.header-info p {
-  font-size: 1.2em;
-  color: #555;
-}
-
-/* Sections container grid */
-.sections-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-/* Card styles */
-.card {
-  background: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-
-/* Card header with toggle indicator */
-.card-header {
-  background: #6a5acd;
-  color: #fff;
-  padding: 15px;
-  cursor: pointer;
+  overflow-x: hidden; /* to avoid horizontal scroll with petals */
   position: relative;
-}
-.card-header::after {
-  content: '+';
-  position: absolute;
-  right: 20px;
-  font-size: 1.5em;
-  transition: transform 0.3s;
-}
-.card-header.active::after {
-  transform: rotate(45deg);
+  min-height: 100vh;
 }
 
-/* Card content */
-.card-content {
-  padding: 15px;
-  display: none;
-}
-.card-content.active {
-  display: block;
+/* Header & Section Styles */
+header,
+section {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
 }
 
-/* List styles */
+/* Titles */
+h1, h2 {
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #fff;
+}
+
+/* Lists */
 ul {
-  list-style: none;
-  padding-left: 20px;
+  list-style-type: none;
+  padding: 0;
 }
 li {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 /* Links */
 a {
-  color: #6a5acd;
+  color: #d83f87;
   text-decoration: none;
+  transition: color 0.3s ease-in-out;
 }
 a:hover {
-  text-decoration: underline;
+  color: #b11f67;
+}
+
+/* Profile Photo */
+.profile-photo {
+  float: right;
+  margin-left: 20px;
+  border-radius: 50%;
+  max-width: 120px;
+  border: 2px solid #d83f87;
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+.profile-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(216, 63, 135, 0.5);
+}
+
+/* Clearfix */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Fade-in-up Animation for Sections */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Staggered fadeIn for a nicer effect */
+.fade-in-up:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.fade-in-up:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.fade-in-up:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.fade-in-up:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.fade-in-up:nth-child(5) {
+  animation-delay: 1s;
+}
+.fade-in-up:nth-child(6) {
+  animation-delay: 1.2s;
+}
+.fade-in-up:nth-child(7) {
+  animation-delay: 1.4s;
+}
+.fade-in-up:nth-child(8) {
+  animation-delay: 1.6s;
+}
+.fade-in-up:nth-child(9) {
+  animation-delay: 1.8s;
+}
+.fade-in-up:nth-child(10) {
+  animation-delay: 2s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Petals Animation */
+.petals-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* let clicks pass through */
+  overflow: hidden;
+  z-index: -1; /* behind everything */
+}
+
+.petal {
+  position: absolute;
+  top: -10%;
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(circle at 15px 15px, #fff 15%, #ffafc9 80%);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: fall 7s linear infinite;
+}
+
+/* Position petals randomly and give them unique animations */
+.petal:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+  animation-duration: 7s;
+}
+.petal:nth-child(2) {
+  left: 30%;
+  animation-delay: 1s;
+  animation-duration: 8s;
+}
+.petal:nth-child(3) {
+  left: 50%;
+  animation-delay: 2s;
+  animation-duration: 6s;
+}
+.petal:nth-child(4) {
+  left: 70%;
+  animation-delay: 3s;
+  animation-duration: 9s;
+}
+.petal:nth-child(5) {
+  left: 90%;
+  animation-delay: 1.5s;
+  animation-duration: 7s;
+}
+.petal:nth-child(6) {
+  left: 20%;
+  animation-delay: 2.5s;
+  animation-duration: 8s;
+}
+.petal:nth-child(7) {
+  left: 40%;
+  animation-delay: 3.5s;
+  animation-duration: 6.5s;
+}
+.petal:nth-child(8) {
+  left: 60%;
+  animation-delay: 1.2s;
+  animation-duration: 8.5s;
+}
+.petal:nth-child(9) {
+  left: 80%;
+  animation-delay: 2.2s;
+  animation-duration: 7.5s;
+}
+.petal:nth-child(10) {
+  left: 95%;
+  animation-delay: 3.8s;
+  animation-duration: 7s;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(120vh) rotate(360deg);
+    opacity: 0;
+  }
 }
