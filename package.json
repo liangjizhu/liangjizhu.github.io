@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next build && next export"
   },
   "repository": {
     "type": "git",
@@ -24,12 +25,12 @@
   },
   "homepage": "https://github.com/liangjizhu/liangjizhu.github.io#readme",
   "dependencies": {
-    "@heroicons/react": "latest",
-    "framer-motion": "latest",
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "react-icons": "latest"
+    "@heroicons/react": "^2.0.17",
+    "framer-motion": "^10.12.0",
+    "next": "^13.4.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0"
   },
   "devDependencies": {
     "tailwindcss": "^3.3.0",
