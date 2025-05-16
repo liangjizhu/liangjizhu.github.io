@@ -25,14 +25,14 @@ export default function Home() {
         >
           <div className="relative w-48 h-48 mx-auto mb-6">
             <Image
-              src="/profile.jpg"
+              src="/IMG_0521.jpg"
               alt="Liang Ji Zhu"
               layout="fill"
               className="rounded-full object-cover shadow-lg"
             />
           </div>
           <h1 className="text-4xl font-bold text-primary-50 mb-2">Liang Ji Zhu</h1>
-          <p className="text-xl text-primary-400">Full Stack Developer</p>
+          <p className="text-xl text-primary-400">Student</p>
         </motion.div>
 
         <nav className="mb-12">
@@ -83,15 +83,25 @@ export default function Home() {
               <h2 className="text-2xl font-bold mb-6">Professional Experience</h2>
               <div className="space-y-6">
                 <div className="border-l-4 border-primary-300 pl-4">
-                  <h3 className="text-xl font-semibold">Senior Full Stack Developer</h3>
-                  <p className="text-primary-400">Company Name • 2020 - Present</p>
+                  <h3 className="text-xl font-semibold">Shop Assistant</h3>
+                  <p className="text-primary-400">Alimentación Bazar, Madrid, Spain • March 2021 – August 2025</p>
                   <ul className="mt-2 list-disc list-inside text-primary-50/90">
-                    <li>Led development of multiple high-impact web applications</li>
-                    <li>Mentored junior developers and implemented best practices</li>
-                    <li>Improved application performance by 40%</li>
+                    <li>Provided exceptional customer service and product recommendations</li>
+                    <li>Managed cash register transactions and returns accurately</li>
+                    <li>Conducted regular inventory counts and restocked merchandise to maintain optimal stock levels</li>
+                    <li>Collaborated with team to implement visual merchandising displays, boosting sales</li>
                   </ul>
                 </div>
-                {/* Add more experience items here */}
+                <div className="border-l-4 border-primary-300 pl-4">
+                  <h3 className="text-xl font-semibold">Warehouse Organizer</h3>
+                  <p className="text-primary-400">Shein, Madrid, Spain • June 2022 – August 2022</p>
+                  <ul className="mt-2 list-disc list-inside text-primary-50/90">
+                    <li>Organized and maintained warehouse inventory for efficient order fulfillment</li>
+                    <li>Processed incoming shipments and prepared outgoing orders accurately</li>
+                    <li>Updated and maintained inventory records using warehouse management software</li>
+                    <li>Assisted in optimizing warehouse layout and workflow to improve efficiency</li>
+                  </ul>
+                </div>
               </div>
             </div>
           )}
