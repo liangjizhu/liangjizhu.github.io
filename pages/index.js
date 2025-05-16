@@ -80,26 +80,24 @@ export default function Home() {
 
           {activeSection === 'experience' && (
             <div className="bg-primary-100/10 backdrop-blur-sm rounded-xl p-8 shadow-xl text-primary-50">
-              <h2 className="text-2xl font-bold mb-6">Professional Experience</h2>
+              <h2 className="text-2xl font-bold mb-6">Education History</h2>
               <div className="space-y-6">
                 <div className="border-l-4 border-primary-300 pl-4">
-                  <h3 className="text-xl font-semibold">Shop Assistant</h3>
-                  <p className="text-primary-400">Alimentación Bazar, Madrid, Spain • March 2021 – August 2025</p>
+                  <h3 className="text-xl font-semibold">Bachelor in Computer Science and Engineering</h3>
+                  <p className="text-primary-400">University of Carlos III de Madrid • Currently enrolled</p>
                   <ul className="mt-2 list-disc list-inside text-primary-50/90">
-                    <li>Provided exceptional customer service and product recommendations</li>
-                    <li>Managed cash register transactions and returns accurately</li>
-                    <li>Conducted regular inventory counts and restocked merchandise to maintain optimal stock levels</li>
-                    <li>Collaborated with team to implement visual merchandising displays, boosting sales</li>
+                    <li>Specializing in software development and computer systems</li>
+                    <li>Relevant coursework: Data Structures, Algorithms, Web Development</li>
+                    <li>Active participation in coding projects and hackathons</li>
                   </ul>
                 </div>
                 <div className="border-l-4 border-primary-300 pl-4">
-                  <h3 className="text-xl font-semibold">Warehouse Organizer</h3>
-                  <p className="text-primary-400">Shein, Madrid, Spain • June 2022 – August 2022</p>
+                  <h3 className="text-xl font-semibold">Science and Technology Baccalaureate</h3>
+                  <p className="text-primary-400">Colegio Villa de Móstoles • Class of 2020</p>
                   <ul className="mt-2 list-disc list-inside text-primary-50/90">
-                    <li>Organized and maintained warehouse inventory for efficient order fulfillment</li>
-                    <li>Processed incoming shipments and prepared outgoing orders accurately</li>
-                    <li>Updated and maintained inventory records using warehouse management software</li>
-                    <li>Assisted in optimizing warehouse layout and workflow to improve efficiency</li>
+                    <li>Graduated with distinction - 9.60 GPA</li>
+                    <li>Focus on Mathematics, Physics, and Technology</li>
+                    <li>Participated in science and technology competitions</li>
                   </ul>
                 </div>
               </div>
@@ -112,12 +110,47 @@ export default function Home() {
                 whileHover={{ scale: 1.02 }}
                 className="bg-primary-100/10 backdrop-blur-sm rounded-xl p-6 shadow-xl text-primary-50"
               >
-                <h3 className="text-xl font-bold mb-2">Project 1</h3>
-                <p className="text-primary-400 mb-4">Full Stack Application</p>
-                <p className="mb-4">Description of the project and your role in it.</p>
+                <h3 className="text-xl font-bold mb-2">Heurística</h3>
+                <p className="text-primary-400 mb-4">Python Project</p>
+                <p className="mb-4">Implementation of heuristic algorithms and problem-solving techniques.</p>
                 <div className="flex space-x-4">
-                  <a href="#" className="text-primary-300 hover:text-primary-400">View Project</a>
-                  <a href="#" className="text-primary-300 hover:text-primary-400">GitHub</a>
+                  <a href="https://github.com/liangjizhu/heuristica" className="text-primary-300 hover:text-primary-400">View on GitHub</a>
+                </div>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                className="bg-primary-100/10 backdrop-blur-sm rounded-xl p-6 shadow-xl text-primary-50"
+              >
+                <h3 className="text-xl font-bold mb-2">RISC-V Projects</h3>
+                <p className="text-primary-400 mb-4">Assembly Development</p>
+                <p className="mb-4">Collection of RISC-V assembly projects focusing on computer architecture fundamentals.</p>
+                <div className="flex space-x-4">
+                  <a href="https://github.com/liangjizhu/riscv" className="text-primary-300 hover:text-primary-400">View on GitHub</a>
+                </div>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                className="bg-primary-100/10 backdrop-blur-sm rounded-xl p-6 shadow-xl text-primary-50"
+              >
+                <h3 className="text-xl font-bold mb-2">Distributed Systems Labs</h3>
+                <p className="text-primary-400 mb-4">C Programming</p>
+                <p className="mb-4">Implementation of distributed systems concepts and network programming.</p>
+                <div className="flex space-x-4">
+                  <a href="https://github.com/liangjizhu/labs_sistemas_distribuidos" className="text-primary-300 hover:text-primary-400">View on GitHub</a>
+                </div>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                className="bg-primary-100/10 backdrop-blur-sm rounded-xl p-6 shadow-xl text-primary-50"
+              >
+                <h3 className="text-xl font-bold mb-2">Compiler Design</h3>
+                <p className="text-primary-400 mb-4">C Development</p>
+                <p className="mb-4">Implementation of compiler components and language processing techniques.</p>
+                <div className="flex space-x-4">
+                  <a href="https://github.com/100495680/Compiladores" className="text-primary-300 hover:text-primary-400">View on GitHub</a>
                 </div>
               </motion.div>
             </div>
