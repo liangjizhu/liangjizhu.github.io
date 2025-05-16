@@ -3,10 +3,60 @@ import { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 import CVViewer from '../components/CVViewer';
+import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } from '../utils/emailjs';
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('about');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [submitStatus, setSubmitStatus] = useState({
+    status: '',
+    message: ''
+  });
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitStatus({ status: 'loading', message: 'Sending message...' });
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: 'liangjizhu29@gmail.com'
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+
+      setSubmitStatus({
+        status: 'success',
+        message: 'Message sent successfully!'
+      });
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setSubmitStatus({
+        status: 'error',
+        message: 'Failed to send message. Please try again.'
+      });
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary-100 to-primary-200">
@@ -159,12 +209,15 @@ export default function Home() {
           {activeSection === 'contact' && (
             <div className="bg-primary-100/10 backdrop-blur-sm rounded-xl p-8 shadow-xl text-primary-50">
               <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
-              <form className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-1">Name</label>
                   <input
                     type="text"
                     id="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
                     className="w-full px-4 py-2 rounded-lg bg-primary-100/20 border border-primary-300/20 focus:border-primary-300 focus:outline-none"
                   />
                 </div>
@@ -173,6 +226,9 @@ export default function Home() {
                   <input
                     type="email"
                     id="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
                     className="w-full px-4 py-2 rounded-lg bg-primary-100/20 border border-primary-300/20 focus:border-primary-300 focus:outline-none"
                   />
                 </div>
@@ -181,14 +237,31 @@ export default function Home() {
                   <textarea
                     id="message"
                     rows="4"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
                     className="w-full px-4 py-2 rounded-lg bg-primary-100/20 border border-primary-300/20 focus:border-primary-300 focus:outline-none"
                   ></textarea>
                 </div>
+                {submitStatus.message && (
+                  <div className={`text-sm ${
+                    submitStatus.status === 'success' ? 'text-green-400' : 
+                    submitStatus.status === 'error' ? 'text-red-400' : 
+                    'text-primary-300'
+                  }`}>
+                    {submitStatus.message}
+                  </div>
+                )}
                 <button
                   type="submit"
-                  className="w-full bg-primary-300 text-primary-50 py-2 px-4 rounded-lg hover:bg-primary-400 transition-colors"
+                  disabled={submitStatus.status === 'loading'}
+                  className={`w-full bg-primary-300 text-primary-50 py-2 px-4 rounded-lg transition-colors ${
+                    submitStatus.status === 'loading' 
+                      ? 'opacity-50 cursor-not-allowed' 
+                      : 'hover:bg-primary-400'
+                  }`}
                 >
-                  Send Message
+                  {submitStatus.status === 'loading' ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>
