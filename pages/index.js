@@ -120,7 +120,6 @@ export default function Home() {
                   <a href="#" className="text-primary-300 hover:text-primary-400">GitHub</a>
                 </div>
               </motion.div>
-              {/* Add more project cards here */}
             </div>
           )}
 
@@ -171,7 +170,7 @@ export default function Home() {
             <a href="https://linkedin.com/in/liangjizhu" className="text-primary-400 hover:text-primary-50 transition-colors">
               <FaLinkedin size={24} />
             </a>
-            <a href="mailto:contact@liangjizhu.com" className="text-primary-400 hover:text-primary-50 transition-colors">
+            <a href="mailto:liangjizhu29@gmail.com" className="text-primary-400 hover:text-primary-50 transition-colors">
               <FaEnvelope size={24} />
             </a>
           </div>
