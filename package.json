@@ -1,0 +1,39 @@
+{
+  "name": "liangjizhu.github.io",
+  "version": "1.0.0",
+  "description": "Liang Ji Zhu's Professional Portfolio",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liangjizhu/liangjizhu.github.io.git"
+  },
+  "keywords": [
+    "portfolio",
+    "web development",
+    "next.js"
+  ],
+  "author": "Liang Ji Zhu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liangjizhu/liangjizhu.github.io/issues"
+  },
+  "homepage": "https://github.com/liangjizhu/liangjizhu.github.io#readme",
+  "dependencies": {
+    "@heroicons/react": "latest",
+    "framer-motion": "latest",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-icons": "latest"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.0",
+    "postcss": "^8.4.23",
+    "autoprefixer": "^10.4.14"
+  }
+}
