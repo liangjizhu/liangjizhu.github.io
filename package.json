@@ -1,39 +1,42 @@
 {
   "name": "liangjizhu.github.io",
-  "version": "1.0.0",
-  "description": "Liang Ji Zhu's Professional Portfolio",
+  "version": "2.0.0",
+  "description": "Liang Ji Zhu — trilingual personal blog",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "rm -rf .next out && next build && next export"
+    "export": "rm -rf .next out && next build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/liangjizhu/liangjizhu.github.io.git"
   },
   "keywords": [
-    "portfolio",
-    "web development",
-    "next.js"
+    "blog",
+    "personal-site",
+    "next.js",
+    "i18n",
+    "trilingual"
   ],
   "author": "Liang Ji Zhu",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/liangjizhu/liangjizhu.github.io/issues"
   },
-  "homepage": "https://github.com/liangjizhu/liangjizhu.github.io#readme",
+  "homepage": "https://liangjizhu.github.io",
   "dependencies": {
-    "@emailjs/browser": "^4.4.1",
-    "@emotion/is-prop-valid": "0.8.8",
-    "@emotion/memoize": "0.7.4",
     "@heroicons/react": "2.0.18",
     "framer-motion": "10.18.0",
+    "gray-matter": "4.0.3",
     "next": "13.5.11",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "4.12.0"
+    "react-icons": "4.12.0",
+    "react-markdown": "9.0.1",
+    "rehype-raw": "7.0.0",
+    "remark-gfm": "4.0.0"
   },
   "devDependencies": {
     "autoprefixer": "10.4.14",

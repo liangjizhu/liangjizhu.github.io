@@ -1,33 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-primary-100 text-primary-50;
+    @apply bg-ink text-ivory font-sans antialiased selection:bg-ocean/30 selection:text-ivory;
+    background-image: radial-gradient(
+        1200px 600px at 90% -10%,
+        rgba(0, 168, 232, 0.12),
+        transparent 60%
+      ),
+      radial-gradient(
+        900px 500px at -10% 10%,
+        rgba(244, 184, 96, 0.06),
+        transparent 60%
+      );
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+
+  :lang(zh) h1, :lang(zh) h2, :lang(zh) h3, :lang(zh) h4 {
+    letter-spacing: 0.01em;
+  }
+
+  a {
+    @apply transition-colors;
   }
 }
 
 @layer components {
+  .container-page {
+    @apply max-w-5xl mx-auto px-5 sm:px-8;
+  }
+
+  .card {
+    @apply rounded-2xl bg-ink-card/70 border border-ink-line/60 shadow-xl shadow-black/20 backdrop-blur-sm;
+  }
+
   .btn {
-    @apply px-4 py-2 rounded-full transition-colors;
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all;
   }
-  
+
   .btn-primary {
-    @apply bg-primary-300 text-primary-50 hover:bg-primary-400;
+    @apply bg-ocean/90 text-ink hover:bg-ocean shadow-lg shadow-ocean/20;
+  }
+
+  .btn-ghost {
+    @apply border border-ink-line text-ivory hover:border-ocean hover:text-ocean;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 text-xs rounded-full border border-ink-line/80 text-slate-muted bg-ink-soft/60 font-mono;
+  }
+
+  .link-underline {
+    @apply relative text-ocean hover:text-seafoam;
+  }
+  .link-underline::after {
+    content: '';
+    @apply absolute left-0 -bottom-0.5 h-px w-full bg-ocean/40;
+  }
+
+  .prose-blog {
+    @apply text-ivory/90 leading-relaxed;
+  }
+  .prose-blog > * + * {
+    @apply mt-5;
+  }
+  .prose-blog h1 {
+    @apply font-display text-3xl sm:text-4xl mt-10 mb-4 text-ivory;
+  }
+  .prose-blog h2 {
+    @apply font-display text-2xl sm:text-3xl mt-10 mb-3 text-ivory;
+  }
+  .prose-blog h3 {
+    @apply font-display text-xl sm:text-2xl mt-8 mb-2 text-ivory;
+  }
+  .prose-blog p {
+    @apply text-ivory/85;
+  }
+  .prose-blog a {
+    @apply text-ocean hover:text-seafoam underline decoration-ocean/40 underline-offset-4;
+  }
+  .prose-blog strong {
+    @apply text-ivory font-semibold;
+  }
+  .prose-blog em {
+    @apply text-seafoam not-italic;
+  }
+  .prose-blog ul {
+    @apply list-disc pl-6 space-y-1.5;
+  }
+  .prose-blog ol {
+    @apply list-decimal pl-6 space-y-1.5;
+  }
+  .prose-blog blockquote {
+    @apply border-l-4 border-ocean/70 pl-4 italic text-seafoam;
+  }
+  .prose-blog code {
+    @apply bg-ink-soft text-amber px-1.5 py-0.5 rounded font-mono text-[0.9em] border border-ink-line/60;
+  }
+  .prose-blog pre {
+    @apply bg-ink-soft border border-ink-line rounded-xl p-4 overflow-x-auto text-sm;
+  }
+  .prose-blog pre code {
+    @apply bg-transparent border-0 p-0 text-ivory;
+  }
+  .prose-blog hr {
+    @apply border-ink-line my-10;
+  }
+  .prose-blog img {
+    @apply rounded-xl border border-ink-line;
+  }
+  .prose-blog table {
+    @apply w-full text-left border-collapse text-sm;
+  }
+  .prose-blog th, .prose-blog td {
+    @apply border border-ink-line px-3 py-2;
+  }
+  .prose-blog th {
+    @apply bg-ink-soft text-ivory font-semibold;
   }
 }
 
-/* Custom animations */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
-  50% {
-    transform: translateY(-10px);
+  .glow {
+    text-shadow: 0 0 32px rgba(0, 168, 232, 0.35);
+  }
+  .bg-dots {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 18px 18px;
   }
 }
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-} 
