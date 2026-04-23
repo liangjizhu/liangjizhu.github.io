@@ -36,6 +36,14 @@ module.exports = {
           deep: '#64798a',
         },
       },
+      opacity: {
+        15: '0.15',
+        35: '0.35',
+        45: '0.45',
+        55: '0.55',
+        65: '0.65',
+        85: '0.85',
+      },
       animation: {
         'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
         'blink': 'blink 1.2s step-end infinite',
