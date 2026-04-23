@@ -17,9 +17,17 @@ export default function CVViewer() {
         >
           {isExpanded ? 'Close' : 'Expand'}
         </button>
+        <a
+          href="/cv2026.pdf"
+          className="absolute top-4 left-4 z-10 bg-primary-300 text-primary-50 px-4 py-2 rounded-full hover:bg-primary-400 transition-colors"
+          download
+        >
+          Download PDF
+        </a>
         <iframe
-          src="/LiangJiZhu_cv2025.pdf"
+          src="/cv2026.pdf"
           className="w-full h-full rounded-lg shadow-xl"
+          title="CV PDF"
         />
       </div>
     </motion.div>
