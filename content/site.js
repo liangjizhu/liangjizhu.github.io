@@ -9,7 +9,7 @@ const site = {
   url: 'https://liangjizhu.github.io',
   avatar: '/IMG_0521.jpg',
   ogImage: '/IMG_0521.jpg',
-  locations: ['Madrid, Spain', 'Trondheim, Norway'],
+  locations: ['Madrid, Spain', 'Trondheim, Norway', 'Wenxi, China'],
 
   socials: [
     { id: 'github', label: 'GitHub', href: 'https://github.com/liangjizhu' },

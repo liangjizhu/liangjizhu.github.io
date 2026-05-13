@@ -3,17 +3,27 @@ import { MapContainer, TileLayer, CircleMarker, Polyline, Tooltip, useMap } from
 
 const MADRID = [40.4168, -3.7038];
 const TRONDHEIM = [63.4305, 10.3951];
+const WENXI = [28.2200, 120.2700];
 
 const CITIES = [
   { pos: MADRID, label: 'Madrid', color: '#00a8e8' },
   { pos: TRONDHEIM, label: 'Trondheim', color: '#7ec8d9' },
+  { pos: WENXI, label: '温溪 Wenxi', color: '#f4b860' },
 ];
+
+// Lines: Wenxi → Madrid (origin → current), Wenxi → Trondheim (origin → Erasmus)
+const LINES = [
+  { positions: [WENXI, MADRID], color: '#f4b860' },
+  { positions: [WENXI, TRONDHEIM], color: '#f4b860' },
+];
+
+const ALL_POSITIONS = [MADRID, TRONDHEIM, WENXI];
 
 function FitBounds({ compact }) {
   const map = useMap();
   useEffect(() => {
-    map.fitBounds([MADRID, TRONDHEIM], {
-      padding: compact ? [16, 20] : [50, 60],
+    map.fitBounds(ALL_POSITIONS, {
+      padding: compact ? [12, 16] : [40, 50],
     });
   }, [map, compact]);
   return null;
@@ -24,8 +34,8 @@ export default function LocationMapInner({ compact }) {
 
   return (
     <MapContainer
-      center={[51.9, 3.4]}
-      zoom={4}
+      center={[45, 58]}
+      zoom={2}
       style={{ height, width: '100%' }}
       scrollWheelZoom={false}
       zoomControl={!compact}
@@ -44,16 +54,19 @@ export default function LocationMapInner({ compact }) {
 
       <FitBounds compact={compact} />
 
-      {/* Dashed connecting line */}
-      <Polyline
-        positions={[MADRID, TRONDHEIM]}
-        pathOptions={{
-          color: '#00a8e8',
-          weight: compact ? 1.5 : 2,
-          opacity: 0.55,
-          dashArray: '6 5',
-        }}
-      />
+      {/* Connecting lines from Wenxi origin */}
+      {LINES.map(({ positions, color }, i) => (
+        <Polyline
+          key={i}
+          positions={positions}
+          pathOptions={{
+            color,
+            weight: compact ? 1 : 1.5,
+            opacity: 0.45,
+            dashArray: '5 5',
+          }}
+        />
+      ))}
 
       {CITIES.map(({ pos, label, color }) => (
         <CircleMarker
