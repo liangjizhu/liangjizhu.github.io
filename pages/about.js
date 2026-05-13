@@ -1,5 +1,6 @@
 import Layout from '../components/Layout';
 import SectionHeading from '../components/SectionHeading';
+import LocationMap from '../components/LocationMap';
 import { useLanguage, pickLocalized } from '../lib/i18n';
 import site from '../content/site';
 
@@ -38,6 +39,10 @@ export default function AboutPage() {
               ))}
             </ul>
           </div>
+        </div>
+
+        <div className="mt-6">
+          <LocationMap />
         </div>
 
         <div className="mt-8 grid md:grid-cols-2 gap-4">

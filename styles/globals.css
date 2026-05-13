@@ -132,6 +132,39 @@
   }
 }
 
+/* Leaflet tooltip override */
+.loc-tooltip {
+  background: #0f2133;
+  border: 1px solid #1f3a54;
+  border-radius: 6px;
+  color: #f2efe9;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  padding: 3px 7px;
+  box-shadow: none;
+  white-space: nowrap;
+}
+.loc-tooltip::before {
+  display: none;
+}
+/* Leaflet zoom control theme */
+.leaflet-control-zoom a {
+  background: #0f2133 !important;
+  border-color: #1f3a54 !important;
+  color: #a6b7c3 !important;
+}
+.leaflet-control-zoom a:hover {
+  background: #132a3e !important;
+  color: #f2efe9 !important;
+}
+.leaflet-bar {
+  border: 1px solid #1f3a54 !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+  box-shadow: none !important;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

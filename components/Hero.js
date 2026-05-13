@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { MapPinIcon } from '@heroicons/react/24/outline';
 import { useLanguage } from '../lib/i18n';
 import site from '../content/site';
+import LocationMap from './LocationMap';
 
 function TypingRotator({ phrases }) {
   const [idx, setIdx] = useState(0);
@@ -89,7 +90,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="justify-self-center md:justify-self-end"
+            className="justify-self-center md:justify-self-end flex flex-col items-center gap-3"
           >
             <div className="relative w-44 h-44 sm:w-52 sm:h-52">
               <div className="absolute -inset-3 rounded-full bg-gradient-to-br from-ocean/30 via-seafoam/20 to-amber/20 blur-xl" />
@@ -104,6 +105,7 @@ export default function Hero() {
                 />
               </div>
             </div>
+            <LocationMap compact />
           </motion.div>
         </div>
       </div>
